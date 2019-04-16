@@ -1,4 +1,7 @@
-setInterval(function() {
+function updateTime() {
     const date = new Date()
     document.getElementById('time').innerHTML = date.toLocaleTimeString()
-}, 1000)
+}
+
+window.onload = updateTime
+setInterval(updateTime, 1000)
