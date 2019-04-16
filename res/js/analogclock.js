@@ -26,7 +26,7 @@ function loop() {
     
     drawPointer(360*(h/12)+(m/60)*30-90,65,"black",2);
     drawPointer(360*(m/60)+(s/60)*6-90,110,"black",2);
-    drawPointer(360*(s/60)+x-90,100,"red",1);
+    drawPointer(360*(s/60)+x-90,90,"red",1);
 
     drawMiddle();
 
