@@ -13,7 +13,7 @@ function updateSysData() {
             text.innerHTML = percent
 
             if (charging) {
-                if (parseInt(percent) >= 100) image.setAttribute('src', '/res/img/bat-charging.svg')
+                if (parseInt(percent) < 95) image.setAttribute('src', '/res/img/bat-charging.svg')
                 else image.setAttribute('src', '/res/img/bat-charged.svg')
             } else {
                 if (parseInt(percent) <= 25) image.setAttribute('src', '/res/img/bat-1.svg')
