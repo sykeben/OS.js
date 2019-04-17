@@ -19,7 +19,7 @@ function updateSysData() {
                 if (parseInt(percent) <= 25) image.setAttribute('src', '/res/img/bat-1.svg')
                 else if (parseInt(percent) > 25 && parseInt(percent) <= 50) image.setAttribute('src', '/res/img/bat-2.svg')
                 else if (parseInt(percent) > 50 && parseInt(percent) <= 75) image.setAttribute('src', '/res/img/bat-3.svg')
-                else if (parseInt(percent) > 75) image.setAttribute('src', '/res/img/bat-45.svg')
+                else if (parseInt(percent) > 75) image.setAttribute('src', '/res/img/bat-4.svg')
             }
 
         })
