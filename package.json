@@ -25,6 +25,7 @@
     "express": "^4.16.4",
     "fs": "0.0.1-security",
     "path": "^0.12.7",
-    "slash": "^2.0.0"
+    "slash": "^2.0.0",
+    "systeminformation": "^4.1.4"
   }
 }

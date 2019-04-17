@@ -10,6 +10,10 @@ const filesystem = require('./fs.js')
 filesystem.prep(system)
 console.log(`Root directory is ${filesystem.root}.`)
 
+const systeminfo = require('./si.js')
+systeminfo.prep(system)
+console.log(`SystemInfo running API version ${systeminfo.siver}.`)
+
 const home = require('./home.js')
 home.prep(system)
 
@@ -17,7 +21,7 @@ system.get('/res/:cat/:file', (req, res) => {
     if (fs.existsSync(filesystem.get(`/res/${req.params.cat}/${req.params.file}`))) {
         res.sendFile(filesystem.get(`/res/${req.params.cat}/${req.params.file}`))
     } else {
-        res.statusCode(404).send('RES:NOTFOUND')
+        res.status(404).send('RES:NOTFOUND')
     }
 })
 

@@ -10,7 +10,7 @@ module.exports = {
     get: function(subdir) { return slash(path.resolve(path.join(__dirname, '..', subdir))) },
 
     prep: function(system) {
-        // Do it.
+        // Not needed yet, but put into place anyway.
     }
 
 }
