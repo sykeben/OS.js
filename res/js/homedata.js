@@ -27,7 +27,7 @@ function updateSysData() {
     })
 
 
-    setTimeout(updateSysData, 5000)
+    setTimeout(updateSysData, 2500)
 
 }
 
