@@ -34,3 +34,7 @@ body {
 .border-darker {
     border-color: #333333 !important;
 }
+
+.infobar {
+    height: 565px !important;
+}
