@@ -2,6 +2,7 @@
 
 const si = require('systeminformation')
 const express = require('express')
+const dns = require('dns')
 
 module.exports = {
 
@@ -34,6 +35,15 @@ module.exports = {
                         .catch(error => output = '[err]')
                 } else { // invalid
                     output = '[inv]'
+                }
+
+            } else if (cat == 'net') { // NETWORK
+
+                if (data == 'con') { // connectivity
+                    dns.lookup('www.google.com', function(err) {
+                        if (err && err.code == 'ENOTFOUND') res.send(false)
+                        else res.send(true)
+                    })
                 }
 
             } else { // INVALID

@@ -10,7 +10,7 @@ function updateSysData() {
             const text = document.getElementById('bat-percent')
             const image = document.getElementById('bat-image')
 
-            text.innerHTML = percent
+            text.innerHTML = `${percent}%`
 
             if (charging) {
                 if (parseInt(percent) < 95) image.setAttribute('src', '/res/img/bat-charging.svg')
@@ -23,6 +23,24 @@ function updateSysData() {
             }
 
         })
+
+    })
+
+    $.getJSON('/si/net/con', (json) => {
+
+        const statmap = new Map(); statmap.set('true', true); statmap.set('false', false)
+        const online = statmap.get(json.toString())
+
+        const image = document.getElementById('net-image')
+        const text = document.getElementById('net-state')
+
+        if (online) {
+            image.setAttribute('src', '/res/img/net-online.svg')
+            text.innerHTML = 'Online'
+        } else {
+            image.setAttribute('src', '/res/img/net-offline.svg')
+            text.innerHTML = 'Offline'
+        }
 
     })
 
