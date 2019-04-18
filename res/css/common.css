@@ -32,6 +32,28 @@ body {
     user-select: none;
 }
 
+.btn-link {
+    color: black;
+}
+
+.btn-link:hover {
+    color: black;
+    text-decoration: none;
+}
+
+.btn-link:active {
+    text-decoration: none;
+}
+
+.btn-link:visited {
+    color: black;
+}
+
+.invert {
+    -webkit-filter: invert(1);
+    filter: invert(1);
+}
+
 .statbar {
     position: absolute;
     bottom: 0;

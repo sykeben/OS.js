@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>Apps</title>
+
+        <% include comcss.ejs %>
+
+    </head>
+
+    <body>
+        
+        <div class="screen">
+
+            <!-- Canvas -->
+            <div class="canvas container m-0 p-0">
+
+                
+
+            </div>
+
+            <!-- Statusbar -->
+            <footer class="statbar bg-dark border-top border-darker noselect">
+                <div class="container-fluid row m-0 p-0 text-light">
+                    <div class="col m-0 p-0 text-left">
+                        <a href="/"><img class="invert" src="/res/img/home.svg" height="16px"></a> &gt; Apps
+                    </div>
+                    <div class="col m-0 p-0 text-right" id="time"></div>
+                </div>
+            </footer>
+        
+        </div>
+
+        <% include comjs.ejs %>
+
+        <script src="/res/js/footerclock.js"></script>
+
+    </body>
+
+</html>

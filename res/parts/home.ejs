@@ -14,42 +14,50 @@
         
         <div class="screen">
 
-            <div class="canvas container m-0 p-0">
+            <!-- Canvas -->
+            <div class="canvas container row m-0 p-0">
 
-                <div class="row m-0 p-0">
+                <div class="col-5 m-0 p-3 bg-light infobar border-right noselect">
+                    
+                    <!-- Clock -->
+                    <p class="text-middle">
+                        <canvas id="a-clock" width="300px" height="300px">
+                            Uh, Oh! Something broke!
+                        </canvas>
+                    </p>
 
-                    <div class="col-5 m-0 p-3 bg-light infobar border-right noselect">
-                        
-                        <!-- Clock -->
-                        <p class="text-middle">
-                            <canvas id="a-clock" width="300px" height="300px">
-                                Uh, Oh! Something broke!
-                            </canvas>
-                        </p>
+                    <!-- Stats -->
+                    <div class="row m-0 px-3 py-0">
 
-                        <!-- Stats -->
-                        <div class="row m-0 px-3 py-0">
+                        <!-- Internet -->
+                        <div class="col-6 m-0 p-0">
+                            <img class="align-middle" id="net-image" src="/res/img/net-unknown.svg" height="25px">
+                            &nbsp;<span id="net-state"></span>
+                        </div>
 
-                            <!-- Internet -->
-                            <div class="col-6 m-0 p-0">
-                                <img class="align-middle" id="net-image" src="/res/img/net-unknown.svg" height="25px">
-                                &nbsp;<span id="net-state"></span>
-                            </div>
-
-                            <!-- Battery -->
-                            <div class="col-6 m-0 p-0 text-right">
-                                <span id="bat-percent"></span>
-                                &nbsp;<img class="align-middle" id="bat-image" src="/res/img/bat-unknown.svg" height="25px">
-                            </div>
-
+                        <!-- Battery -->
+                        <div class="col-6 m-0 p-0 text-right">
+                            <span id="bat-percent"></span>
+                            &nbsp;<img class="align-middle" id="bat-image" src="/res/img/bat-unknown.svg" height="25px">
                         </div>
 
                     </div>
 
-                    <div class="col-7 m-0 p-3">
-                        
-                    </div>
+                </div>
 
+                <!-- "Docked" Pages -->
+                <div class="col-7 m-0 p-0">
+
+                    <!-- Most Common -->
+                    <div class="row m-0 py-3 px-1">
+                        <div class="col-4 m-1 text-center"><a class="btn-link" href="/apps">
+                            <img class="align-middle img-fluid mb-1" src="/res/img/apps.svg"><br>
+                            Applications
+                        </a></div>
+                        <div class="col-4 m-1"></div>
+                        <div class="col-4 m-1"></div>
+                    </div>
+                    
                 </div>
 
             </div>

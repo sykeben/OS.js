@@ -17,6 +17,9 @@ console.log(`SystemInfo running API version ${systeminfo.siver}.`)
 const home = require('./home.js')
 home.prep(system)
 
+const apps = require('./apps.js')
+apps.prep(system)
+
 system.get('/res/:cat/:file', (req, res) => {
     if (fs.existsSync(filesystem.get(`/res/${req.params.cat}/${req.params.file}`))) {
         res.sendFile(filesystem.get(`/res/${req.params.cat}/${req.params.file}`))
