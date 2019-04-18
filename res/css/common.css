@@ -54,6 +54,10 @@ body {
     filter: invert(1);
 }
 
+.whiteout {
+    filter: brightness(0) invert(1);
+}
+
 .statbar {
     position: absolute;
     bottom: 0;

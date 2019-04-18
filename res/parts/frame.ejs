@@ -17,10 +17,7 @@
             <!-- Canvas -->
             <div class="container m-0 p-0">
 
-                <!-- App Icons -->
-                <div class="container-fluid m-0 px-0 py-4 noselect">
-                    <%- list %>
-                </div>
+                <%- include(page) %>
 
             </div>
 
@@ -28,7 +25,8 @@
             <footer class="statbar bg-dark border-top border-darker noselect">
                 <div class="container-fluid row m-0 p-0 text-light">
                     <div class="col m-0 p-0 text-left">
-                        <a href="/"><img class="invert" src="/res/img/home.svg" height="16px"></a> &gt; Apps
+                        <a href="/"><img class="invert" src="/res/img/home.svg" height="16px"></a>&nbsp;&gt;
+                        <a href="/apps"><img class="whiteout" src="/res/img/apps.svg" height="16px"></a>&nbsp;&gt;&nbsp;<%- name %>
                     </div>
                     <div class="col m-0 p-0 text-right">
                         <img class="invert" id="foot-net" src="/res/img/net-unknown.svg" height="16px">&nbsp;
