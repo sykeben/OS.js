@@ -80,3 +80,7 @@ body {
 .infobar {
     height: 565px !important;
 }
+
+.rounded-xl {
+    border-radius: 30px;
+}
