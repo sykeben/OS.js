@@ -29,7 +29,7 @@ module.exports = {
                 if ((i%4) == 0 && (i != 0)) content += '</div>'
                 if ( ((i%4)==0) || (i==0) ) content += '<div class="row mb-5">'
                 content += '<div class="col-3 text-center">'
-                content += `<a class=\"btn-link\" href=\"/apps/${currentapp}\">`
+                content += `<a class=\"btn-link\" href=\"/apps/${currentapp}/\">`
                 content += `<img width="128px" src=\"/apps/${currentapp}/icon\"><br>`
                 content += appids[currentapp].name
                 content += '</a>'
@@ -75,11 +75,11 @@ module.exports = {
             }
         })
 
-        system.get('/apps/:id/pg/:pg', (req, res) => {
-            if (fs.existsSync(filesystem.get(`/apps/${req.params.id}/pages/${req.params.pg}`))) {
+        system.get('/apps/:id/pg/:page', (req, res) => {
+            if (fs.existsSync(filesystem.get(`/apps/${req.params.id}/pages/${req.params.page}.ejs`))) {
                 const currentTime = new Date().toLocaleTimeString()
                 res.render(filesystem.get('/res/parts/frame'), {
-                    page: filesystem.get(`/apps/${req.params.id}/pages/${req.params.pg}`),
+                    page: filesystem.get(`/apps/${req.params.id}/pages/${req.params.page}`),
                     name: appids[req.params.id].name,
                     time: currentTime
                 })
