@@ -1,3 +1,45 @@
-<div class="p-5">
-	<p class="lead">Coming soon.</p>
+<link rel="stylesheet" href="./res/ui/calc.css">
+
+<div class="row p-0 mx-0 mt-0 mb-3 bg-light border-bottom">
+
+	<input type="text" value="" id="display" readonly="readonly">
+
 </div>
+
+<div class="row p-0 pt-5 mx-0 mt-5 mb-4">
+	<div class="col"></div><div class="col"></div>
+	<div class="col"><button class="mx-1 w-100 btn btn-lg btn-primary" onclick="calcButton('1')">1</button></div>
+	<div class="col"><button class="mx-1 w-100 btn btn-lg btn-primary" onclick="calcButton('2')">2</button></div>
+	<div class="col"><button class="mx-1 w-100 btn btn-lg btn-primary" onclick="calcButton('3')">3</button></div>
+	<div class="col"><button class="mx-1 w-100 btn btn-lg btn-secondary" onclick="calcButton('+')">&plus;</button></div>
+	<div class="col"></div><div class="col"></div>
+</div>
+
+<div class="row p-0 mx-0 mt-0 mb-4">
+	<div class="col"></div><div class="col"></div>
+	<div class="col"><button class="mx-1 w-100 btn btn-lg btn-primary" onclick="calcButton('4')">4</button></div>
+	<div class="col"><button class="mx-1 w-100 btn btn-lg btn-primary" onclick="calcButton('5')">5</button></div>
+	<div class="col"><button class="mx-1 w-100 btn btn-lg btn-primary" onclick="calcButton('6')">6</button></div>
+	<div class="col"><button class="mx-1 w-100 btn btn-lg btn-secondary" onclick="calcButton('-')">&minus;</button></div>
+	<div class="col"></div><div class="col"></div>
+</div>
+
+<div class="row p-0 mx-0 mt-0 mb-4">
+	<div class="col"></div><div class="col"></div>
+	<div class="col"><button class="mx-1 w-100 btn btn-lg btn-primary" onclick="calcButton('7')">7</button></div>
+	<div class="col"><button class="mx-1 w-100 btn btn-lg btn-primary" onclick="calcButton('8')">8</button></div>
+	<div class="col"><button class="mx-1 w-100 btn btn-lg btn-primary" onclick="calcButton('9')">9</button></div>
+	<div class="col"><button class="mx-1 w-100 btn btn-lg btn-secondary" onclick="calcButton('*')">&times;</button></div>
+	<div class="col"></div><div class="col"></div>
+</div>
+
+<div class="row p-0 mx-0 mt-0 mb-4">
+	<div class="col"></div><div class="col"></div>
+	<div class="col"><button class="mx-1 w-100 btn btn-lg btn-danger" onclick="calcClear()">C</button></div>
+	<div class="col"><button class="mx-1 w-100 btn btn-lg btn-primary" onclick="calcButton('0')">0</button></div>
+	<div class="col"><button class="mx-1 w-100 btn btn-lg btn-success" onclick="calcGo()">&equals;</button></div>
+	<div class="col"><button class="mx-1 w-100 btn btn-lg btn-secondary" onclick="calcButton('/')">&divide;</button></div>
+	<div class="col"></div><div class="col"></div>
+</div>
+
+<script src="./res/ui/calc.js"></script>
