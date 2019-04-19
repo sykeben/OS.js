@@ -58,6 +58,36 @@ module.exports = {
 
         })
 
+    },
+
+    getStatBarImgs: function() {
+
+        let netimg = ''
+        dns.lookup('www.google.com', function(err) {
+            if (err && err.code == 'ENOTFOUND') netimg = '/res/img/net-offline.svg'
+            else netimg = '/res/img/net-online.svg'
+        })
+
+        let batimg = ''
+        let batper = 0
+        si.battery()
+            .then(data => {
+                if (data.acconnected) {
+                    if (data.percent < 95) batimg = '/res/img/bat-charging.svg'
+                    else batimg = '/res/img/bat-charged.svg'
+                } else {
+                    if (data.percent <= 25) batimg = '/res/img/bat-1.svg'
+                    else if (data.percent > 25 && data.percent <= 50) batimg = '/res/img/bat-2.svg'
+                    else if (data.percent > 50 && data.percent <= 75) batimg = '/res/img/bat-3.svg'
+                    else if (data.percent > 75) batimg = '/res/img/bat-4.svg'
+                }
+                batper = data.percent
+            })
+            .catch(error => {})
+
+
+        return { bat: batimg, net: netimg, per: batper }
+        
     }
 
 }

@@ -5,6 +5,7 @@ const filesystem = require('./fs.js')
 const fs = require('fs')
 const slash = require('slash')
 const path = require('path')
+const { getStatBarImgs } = require('./si.js')
 
 const isDirectory = source => fs.lstatSync(source).isDirectory()
 const getDirectories = source => fs.readdirSync(source).map(name => slash(path.join(source, name))).filter(isDirectory)
@@ -38,9 +39,12 @@ module.exports = {
             }
 
             const currentTime = new Date().toLocaleTimeString()
+            const sbImgs = getStatBarImgs()
             res.render(filesystem.get('/res/parts/apps'), {
                 list: content,
-                time: currentTime
+                time: currentTime,
+                batimg: sbImgs.bat,
+                netimg: sbImgs.net
             })
 
         })
@@ -50,10 +54,13 @@ module.exports = {
             if (appids[req.params.id] != undefined) {
 
                 const currentTime = new Date().toLocaleTimeString()
+                const sbImgs = getStatBarImgs()
                 res.render(filesystem.get('/res/parts/frame'), {
                     page: filesystem.get(`/apps/${req.params.id}/main`),
                     name: appids[req.params.id].name,
-                    time: currentTime
+                    time: currentTime,
+                    batimg: sbImgs.bat,
+                    netimg: sbImgs.net
                 })
 
             } else {
@@ -77,12 +84,17 @@ module.exports = {
 
         system.get('/apps/:id/pg/:page', (req, res) => {
             if (fs.existsSync(filesystem.get(`/apps/${req.params.id}/pages/${req.params.page}.ejs`))) {
+
                 const currentTime = new Date().toLocaleTimeString()
+                const sbImgs = getStatBarImgs()
                 res.render(filesystem.get('/res/parts/frame'), {
                     page: filesystem.get(`/apps/${req.params.id}/pages/${req.params.page}`),
                     name: appids[req.params.id].name,
-                    time: currentTime
+                    time: currentTime,
+                    batimg: sbImgs.bat,
+                    netimg: sbImgs.net
                 })
+                
             } else {
                 res.status(404).send('APPS:NOPG')
             }
