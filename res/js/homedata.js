@@ -1,8 +1,9 @@
+const statmap = new Map(); statmap.set('true', true); statmap.set('false', false)
+
 function updateSysData() {
 
     $.getJSON('/si/bat/acc', (json) => {
         
-        const statmap = new Map(); statmap.set('true', true); statmap.set('false', false)
         const charging = statmap.get(json.toString())
 
         $.getJSON('/si/bat/per', (json) => {
@@ -28,7 +29,6 @@ function updateSysData() {
 
     $.getJSON('/si/net/con', (json) => {
 
-        const statmap = new Map(); statmap.set('true', true); statmap.set('false', false)
         const online = statmap.get(json.toString())
 
         const image = document.getElementById('net-image')

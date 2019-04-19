@@ -8,7 +8,10 @@ module.exports = {
     prep: function(system) {
 
         system.get('/', (req, res) => {
-            res.render(filesystem.get('res/parts/home'))
+            const currentTime = new Date().toLocaleTimeString()
+            res.render(filesystem.get('res/parts/home'), {
+                time: currentTime.toString()
+            })
         })
 
     }

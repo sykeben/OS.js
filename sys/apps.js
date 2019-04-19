@@ -37,8 +37,10 @@ module.exports = {
                 if (i == appdirs.length-1) content += '</div>'
             }
 
+            const currentTime = new Date().toLocaleTimeString()
             res.render(filesystem.get('/res/parts/apps'), {
-                list: content
+                list: content,
+                time: currentTime
             })
 
         })
@@ -47,9 +49,11 @@ module.exports = {
 
             if (appids[req.params.id] != undefined) {
 
+                const currentTime = new Date().toLocaleTimeString()
                 res.render(filesystem.get('/res/parts/frame'), {
                     page: filesystem.get(`/apps/${req.params.id}/main`),
-                    name: appids[req.params.id].name
+                    name: appids[req.params.id].name,
+                    time: currentTime
                 })
 
             } else {
@@ -73,9 +77,11 @@ module.exports = {
 
         system.get('/apps/:id/pg/:pg', (req, res) => {
             if (fs.existsSync(filesystem.get(`/apps/${req.params.id}/pages/${req.params.pg}`))) {
+                const currentTime = new Date().toLocaleTimeString()
                 res.render(filesystem.get('/res/parts/frame'), {
                     page: filesystem.get(`/apps/${req.params.id}/pages/${req.params.pg}`),
-                    name: appids[req.params.id].name
+                    name: appids[req.params.id].name,
+                    time: currentTime
                 })
             } else {
                 res.status(404).send('APPS:NOPG')

@@ -31,7 +31,7 @@ module.exports = {
                         .catch(error => output = '[err]')
                 } else if (data == 'acc') { // ac connected
                     si.battery()
-                        .then(data => output = res.send(data.acconnected.toString()))
+                        .then(data => res.send(data.acconnected.toString()))
                         .catch(error => output = '[err]')
                 } else { // invalid
                     output = '[inv]'
