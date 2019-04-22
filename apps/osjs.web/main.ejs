@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="./res/ui/common.css">
+
+<nav class="navbar navbar-light bg-light border-bottom">
+	<div class="container-fluid m-0 p-0">
+
+		<div class="col-4 form-inline m-0 p-0">
+			<button class="btn btn-light mx-1" onclick="button('goPrev')">&lt;</button>
+			<button class="btn btn-light mx-1" onclick="button('goNext')">&gt;</button>
+			<button class="btn btn-light reload mx-1" onclick="button('reload')">&#x21bb;</button>
+		</div>
+
+		<div class="col-8 form-inline m-0 p-0">
+			<input class="form-control mx-1" placeholder="Go..." type="url" id="nav-url">
+			<button class="btn btn-light mx-1" onclick="button('goNav')">&rarr;</button>
+		</div>
+
+	</div>
+</nav>
+
+<iframe src="" id="web-frame"></iframe>
+
+<script src="./res/ui/buttons.js"></script>
